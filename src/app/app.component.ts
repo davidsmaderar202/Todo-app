@@ -1,15 +1,19 @@
 import { Component } from "@angular/core";
 import { TaskListComponent } from "./task-list/task-list.component";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AddTaskComponent } from "./add-task/add-task.component";
+import { HttpClientModule } from "@angular/common/http";
 
-@Component({
+
+  @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [AddTaskComponent, TaskListComponent, FormsModule],
+  imports: [HttpClientModule, ReactiveFormsModule, AddTaskComponent, TaskListComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
+
 export class AppComponent {
   title = 'Mi lista de Tareas';
   tasks: string[] = [];
