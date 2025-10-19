@@ -1,3 +1,10 @@
 <h1>Mi Lista de Tareas</h1>
 <app-add-task (taskAdded)="onTaskAdded($event)"></app-add-task>
 <app-task-list [tasks]="tasks"></app-task-list>
+
+<h1>{{ title }}</h1>
+<p>Total de tareas: {{ taskCount }}</p>
+
+<app-add-task (taskAdded)="onTaskAdded($event)"></app-add-task>
+<app-task-list [tasks]="tasks"></app-task-list>
+

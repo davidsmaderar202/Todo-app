@@ -1,5 +1,10 @@
 <div class="add-task-container">
-  <input [(ngModel)]="newTask" placeholder="Escribe una tarea..." />
-  <button (click)="addTask()">Agregar</button>
+  <input [(ngModel)]="newTask" required minlength="3" placeholder="Escribe una tarea..." />
+<button (click)="addTask()" [disabled]="newTask.trim().length < 3">Agregar</button>
 </div>
+
+<form #taskForm="ngForm" (ngSubmit)="addTask()">
+  <input name="taskTitle" [(ngModel)]="newTask" required minlength="3" placeholder="Escribe una tarea..." />
+  <button type="submit" [disabled]="taskForm.invalid">Agregar</button>
+</form>
 

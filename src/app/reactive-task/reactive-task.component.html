@@ -1,0 +1,10 @@
+<form [formGroup]="taskForm" (ngSubmit)="addTask()">
+  <input formControlName="title" placeholder="Escribe una tarea..." />
+  <button type="submit" [disabled]="taskForm.invalid">Agregar</button>
+
+  <div *ngIf="taskForm.controls.title.invalid && taskForm.controls.title.touched">
+  <small *ngIf="taskForm.controls.title.errors?.['required']">Campo obligatorio</small>
+  <small *ngIf="taskForm.controls.title.errors?.['minlength']">Mínimo 3 caracteres</small>
+</div>
+
+</form>

@@ -11,9 +11,14 @@ import { AddTaskComponent } from "./add-task/add-task.component";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  title = 'Mi lista de Tareas';
   tasks: string[] = [];
 
   onTaskAdded(task: string) {
     this.tasks.push(task);
+  }
+
+  get taskCount(): number {
+    return this.tasks.length;
   }
 }
